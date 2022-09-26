@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+body .attribution {
+    font-size: 11px;
+    text-align: center
+}
+
+body .attribution a {
+    color: hsl(0deg, 0%, 100%)
+}
+
+.container_main {
+    width: 100%;
+    max-width: 90rem;
+    min-width: 23.125rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "action""info";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem
+}
+
+.container_main .container_action {
+    width: 20rem;
+    grid-area: action;
+    height: 12.5rem;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, .12);
+    justify-self: center;
+    align-self: end;
+    border-radius: .5rem 5rem .5rem .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: hsl(228deg, 56%, 26%);
+    padding: 2.3rem
+}
+
+.container_main .container_action .logo {
+    height: 2.6rem;
+    width: auto
+}
+
+.container_main .container_action .logo img {
+    width: 100%;
+    height: 100%
+}
+
+.container_main .container_action .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.container_main .container_action .icons .icon_holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: hsl(229deg, 57%, 11%);
+    border-radius: .6rem;
+    margin-right: 1rem
+}
+
+.container_main .container_action .icons .icon_holder img {
+    width: 45%;
+    height: auto
+}
+
+.container_main .container_info {
+    width: 20rem;
+    height: 10rem;
+    grid-area: info;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, .12);
+    justify-self: center;
+    align-self: start;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: hsl(228deg, 56%, 26%);
+    padding: 2rem;
+    position: relative
+}
+
+.container_main .container_info h1 {
+    font: 400 .875rem Raleway, sans-serif;
+    color: hsl(243deg, 100%, 93%);
+    margin-bottom: 1rem
+}
+
+.container_main .container_info h1 span {
+    font-weight: 700
+}
+
+.container_main .container_info .metter {
+    position: relative;
+    width: 100%;
+    height: 1.25rem;
+    background: hsl(229deg, 57%, 11%);
+    border-radius: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: .2rem
+}
+
+.container_main .container_info .metter .metter_innerbar {
+    width: calc(var(--actual-value) * 100 / var(--total-value) * 1%);
+    min-width: .9rem;
+    max-width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
+    border-radius: .7rem;
+    position: relative
+}
+
+.container_main .container_info .metter .metter_innerbar::after {
+    content: "";
+    position: absolute;
+    right: .1375rem;
+    top: calc(50% - .3125rem);
+    width: .625rem;
+    height: .625rem;
+    background: hsl(0deg, 0%, 100%);
+    border-radius: 50%
+}
+
+.container_main .container_info .metter::before {
+    content: var(--init-value) " "var(--title-value);
+    font: 700 .8125rem Raleway, sans-serif;
+    color: hsl(243deg, 100%, 93%);
+    position: absolute;
+    bottom: -1.6rem;
+    left: -.3rem
+}
+
+.container_main .container_info .metter::after {
+    content: var(--end-value) " "var(--title-value);
+    font: 700 .8125rem Raleway, sans-serif;
+    color: hsl(243deg, 100%, 93%);
+    position: absolute;
+    bottom: -1.6rem;
+    right: -.3rem
+}
+
+.container_main .container_info .info_glove {
+    width: 50%;
+    height: 4.4rem;
+    background: hsl(0deg, 0%, 100%);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, .12);
+    border-radius: .5rem;
+    position: absolute;
+    bottom: -2.2rem;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.container_main .container_info .info_glove p {
+    width: 90%;
+    font: 700 .8125rem Raleway, sans-serif;
+    color: hsl(229deg, 7%, 55%);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.container_main .container_info .info_glove p span {
+    color: hsl(229deg, 57%, 11%);
+    font-size: 2.5rem
+}
+
+@media only screen and (min-width:62.5rem) {
+    body {
+        background: url(../images/bg-desktop.png), hsl(229deg, 57%, 11%);
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        background-position: bottom
+    }
+
+    .container_main {
+        grid-template-areas: "action info""a b";
+        grid-template-columns: 2fr 3fr;
+        gap: 1.75rem
+    }
+
+    .container_main .container_action {
+        align-self: end;
+        justify-self: end
+    }
+
+    .container_main .container_info {
+        align-self: end;
+        justify-self: start;
+        width: 70%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2.5rem
+    }
+
+    .container_main .container_info .info_glove {
+        top: -2.7rem;
+        left: calc(70% - 2.5rem);
+        width: 30%
+    }
+
+    .container_main .container_info .info_glove::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -1.5rem;
+        width: 0;
+        height: 0;
+        border-top: 2rem solid hsl(0deg, 0%, 100%);
+        border-left: 2rem solid transparent
+    }
+}
+
+@media (hover:hover) {
+    .container_main .container_action .icons .icon_holder:hover {
+        background: hsl(243deg, 100%, 93%)
+    }
+
+    .container_main .container_action .icons .icon_holder:active {
+        transform: scale(.9)
+    }
+}
