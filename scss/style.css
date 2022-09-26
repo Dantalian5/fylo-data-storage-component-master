@@ -224,4 +224,10 @@ body .attribution a {
   .container_main .container_action .icons .icon_holder:active {
     transform: scale(0.9);
   }
+  .container_main .container_info .info_glove {
+    display: none;
+  }
+  .container_main .container_info:hover .info_glove {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */

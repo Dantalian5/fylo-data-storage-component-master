@@ -250,6 +250,16 @@ body{
                 }
             }
         }
+        .container_info{
+            .info_glove{
+                display: none;
+            }
+        }
+        .container_info:hover{
+            .info_glove{
+                display: flex;
+            }
+        }
     }
     
 }
